@@ -2,27 +2,27 @@
 
 def jogador_pedra(pc):
     if pc == 1:
-        return 'Empatou!'
+        return '[yellow]Empatou![/]'
     elif pc == 2:
-        return 'Perdeu!'
+        return '[red]Perdeu[/]!'
     else:
-        return 'Venceu!'
+        return '[green]Venceu![/]'
 
 def jogador_papel(pc):
     if pc == 1:
-        return 'Venceu!'
+        return '[green]Venceu![/]'
     elif pc == 2:
-        return 'Empatou!'
+        return '[yellow]Empatou![/]'
     else:
-        return 'Perdeu!'
+        return '[red]Perdeu![/]'
 
 def jogador_tesoura(pc):
     if pc == 1:
-        return 'Perdeu'
+        return '[red]Perdeu![/]'
     elif pc == 2:
-        return 'Venceu!'
+        return '[green]Venceu![/]'
     else:
-        return 'Empatou!'
+        return '[yellow]Empatou![/]'
 
 
     

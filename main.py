@@ -33,6 +33,7 @@ while True:
         continuar = input('Deseja continuar? [S/N] ').lower().strip()
         if continuar in 'sn':
             break
+        print('Opção inválida. Somente Sim ou Não')
     if continuar == 'n':
         break
 
