@@ -16,7 +16,7 @@ def leiaNatural(msg):
         try:
             numero = int(input(msg))
         except (ValueError, TypeError):
-            print('[red]ERRO: Por favor, digite um número real válido.[/]')
+            print('[red]ERRO: Por favor, digite um número inteiro válido.[/]')
             continue
         except KeyboardInterrupt:
             print('[red]Usuário preferiu não digitar esse número.[/]')

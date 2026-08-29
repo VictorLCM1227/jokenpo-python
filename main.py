@@ -14,7 +14,7 @@ while True:
     pc = randint(1, 3)
     print()
     print(f'Você escolheu: {jogadas[escolha_menu - 1]}')
-    print(f'Compuatdor escolheu: {jogadas[pc - 1]}')
+    print(f'Computador escolheu: {jogadas[pc - 1]}')
     print()
     print('Você', end=' ')
 
