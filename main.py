@@ -1,15 +1,34 @@
 # main
 
-from utilidades import menu
+from tela_de_login import arquivoExiste, CriarArquivo, login, criar_conta
+from utilidades import menu, cabecalho, menuInicial
 from random import randint
 from rich import print
 from funcoes import jogador_pedra, jogador_papel, jogador_tesoura
 from time import sleep
 
+arq = 'dados.txt'
+
+if not arquivoExiste(arq):
+    CriarArquivo(arq)
+
 jogadas = ['PEDRA', 'PAPEL', 'TESOURA']
 
 
 while True:
+    escolha_inicial = menuInicial('JOKENPÔ', ['Sair', 'Login', 'Criar conta', 'Ranking'])
+
+    if escolha_inicial == 1:
+        cabecalho('SAINDO...')
+        break
+
+    elif escolha_inicial == 2:
+        login()
+
+    elif escolha_inicial == 3:
+        criar_conta()
+
+
     escolha_menu = menu('JOKENPÔ', ['PEDRA', 'PAPEL', 'TESOURA'])
 
     pc = randint(1, 3)

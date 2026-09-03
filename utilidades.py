@@ -41,3 +41,18 @@ def menu(titulo, lista):
         print('[red]Erro: Opção inválida![/]')
     return opc
 
+
+def menuInicial(titulo, lista):
+    cabecalho(titulo.upper())
+    c = 1
+    for item in lista:
+        print(f'{c} - {item}')
+        c += 1
+    print(linha())
+    while True:
+        opc = leiaNatural('Sua opção: ')
+        if 1<= opc <= 3:
+            break
+        print('[red]Erro: Opção inválida![/]')
+    return opc
+
