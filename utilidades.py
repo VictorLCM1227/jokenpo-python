@@ -1,58 +1,65 @@
 # Utilidades
 
 from rich import print
-from rich.table import Table
 
-def linha(tamanho=30):
+
+def linha(tamanho=40):
     return '-' * tamanho
 
+
 def cabecalho(txt):
+
     print(linha())
-    print(txt.center(30))
+    print(txt.center(40))
     print(linha())
 
-def leiaNatural(msg):
+
+def leia_natural(msg):
+
     while True:
+
         try:
             numero = int(input(msg))
-        except (ValueError, TypeError):
-            print('[red]ERRO: Por favor, digite um número inteiro válido.[/]')
+
+        except ValueError:
+
+            print(
+                '[red]ERRO: Digite um número inteiro válido.[/]'
+            )
+
             continue
+
         except KeyboardInterrupt:
-            print('[red]Usuário preferiu não digitar esse número.[/]')
+
+            print(
+                '\n[red]Programa interrompido pelo usuário.[/]'
+            )
+
             return 0
-        else:
-            if numero >= 0:
-                return numero
-            print('[red]ERRO: Por favor, digite um número maior ou igual a zero.[/]')
-            continue
+
+        if numero >= 0:
+            return numero
+
+        print(
+            '[red]ERRO: Digite um número maior ou igual a zero.[/]'
+        )
+
 
 def menu(titulo, lista):
+
     cabecalho(titulo.upper())
-    c = 1
-    for item in lista:
-        print(f'{c} - {item}')
-        c += 1
+
+    for numero, item in enumerate(lista, 1):
+
+        print(f'{numero} - {item}')
+
     print(linha())
+
     while True:
-        opc = leiaNatural('Sua opção: ')
-        if 1<= opc <= 3:
-            break
+
+        opcao = leia_natural('Sua opção: ')
+
+        if 1 <= opcao <= len(lista):
+            return opcao
+
         print('[red]Erro: Opção inválida![/]')
-    return opc
-
-
-def menuInicial(titulo, lista):
-    cabecalho(titulo.upper())
-    c = 1
-    for item in lista:
-        print(f'{c} - {item}')
-        c += 1
-    print(linha())
-    while True:
-        opc = leiaNatural('Sua opção: ')
-        if 1<= opc <= 3:
-            break
-        print('[red]Erro: Opção inválida![/]')
-    return opc
-
